@@ -1,0 +1,57 @@
+/*******************************************
+   768px (Mobile)
+*******************************************/
+@media (max-width: 768px) {
+
+  /* 이미지 분기 */
+  .pcOnly { display: none; }
+  .mobileOnly { display: block; }
+
+  .top-header {
+    height: 64px;
+  }
+
+  .header-inner {
+    padding: 0 16px;
+  }
+
+  /* GNB는 숨기고 햄버거 사용 */
+  .gnb { display: none; }
+  .hamburger-btn { display: block; }
+
+  .hero {
+    height: 420px;
+  }
+
+  .menuList .inner {
+    padding: 0 16px;
+  }
+
+  .titleArea {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .swiper-wrapper {
+    gap: 20px;
+  }
+
+  .swiper-slide a {
+    width: 220px;
+    height: 260px;
+    border-radius: 140px;
+  }
+
+  .sns_inner {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .sns_pic ul {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  footer img {
+    padding: 0 16px;
+  }
+}

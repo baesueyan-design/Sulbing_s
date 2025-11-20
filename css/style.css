@@ -1,0 +1,336 @@
+/*******************************************
+    GLOBAL RESET
+*******************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+html, body {
+  width: 100%;
+  background: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/*******************************************
+    PC 기본: 이미지 분기
+*******************************************/
+.pcOnly { display: block; }
+.mobileOnly { display: none; }
+
+/*******************************************
+    HEADER
+*******************************************/
+.top-header {
+  width: 100%;
+  height: 100px;
+  background-color: #4a1410;
+  position: relative;
+}
+
+.header-inner {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 23px 80px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin: 10px 10px;
+}
+
+.logo img {
+  height: 30px;
+  display: block;
+}
+
+.gnb {
+  flex: 1;
+  margin-left: 110px;
+}
+
+.gnb ul {
+  display: flex;
+  gap: 60px;
+}
+
+.gnb a {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffe9c8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.header-actions a img {
+  height: 46px;
+  border-radius: 999px;
+}
+
+.hamburger-btn { display: none; }
+
+/*******************************************
+    HERO BANNER
+*******************************************/
+.hero {
+  position: relative;
+  width: 100%;
+  height: 920px;
+  overflow: hidden;
+}
+
+.hero-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider article {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 0;
+  transition: transform .8s ease-in-out, opacity .8s ease-in-out;
+}
+
+.hero-slider article.active {
+  left: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+.hero-slider article.next {
+  left: 100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.hero-slider article.prev {
+  left: -100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.hero-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero-controls > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s;
+  z-index: 11;
+}
+
+.hero-controls > button:first-of-type { left: 40px; }
+.hero-controls > button:nth-of-type(2) { right: 40px; }
+
+.pager {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.pager span {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pager span.active {
+  background: #8B4513;
+  transform: scale(1.2);
+}
+
+/*******************************************
+   MENU LIST
+*******************************************/
+.sulbing-menu {
+  background: #fbeed9;
+  padding: 80px 0;
+}
+
+.menuList .inner {
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+}
+
+.titleArea {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 120px;
+  margin-top: 40px;
+}
+
+.titleArea .btnArea {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menuListSlideWrapper {
+  flex: 1;
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+.menuListSlide { width: 100%; }
+
+.swiper-wrapper { gap: 0;}
+
+.swiper-slide {
+  width: 308px !important;
+  flex-shrink: 0;
+  margin-right: 16px !important;
+}
+
+.swiper-slide a {
+  width: 308px;
+  height: 397px;
+  background: #fff;
+  border-radius: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-slide .txt {
+  font-size: 18px;
+  margin-top: 14px;
+  color: #42120e;
+  text-align: center;
+}
+
+/*******************************************
+    SNS
+*******************************************/
+.sns {
+  width: 100%;
+  background-color: #fff;
+  border-top: 1px solid #f2e4d3;
+}
+
+.sns_inner {
+  margin: 100px auto;
+  padding: 0 0 0 145px;
+  display: flex;
+  align-items: center;
+}
+
+.sns_header {
+  margin-top: -210px;
+  flex: 0 0 260px;
+  padding-right: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sns_list {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.sns_pic ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.sns_pic ul li {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+/*******************************************
+    STORE / 창업 안내
+*******************************************/
+.store-franchise {
+  display: flex;
+  justify-content: center;
+}
+
+.store-franchise > div {
+  width: 100%;
+  margin: 0;
+  max-width: none; 
+}
+
+/* 🔥 중괄호 오류 수정 완료 */
+.store-search img,
+.franchise-info img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*******************************************
+    FOOTER
+*******************************************/
+footer {
+  background: #f0f0f0;
+  padding:0;
+}
+
+footer img {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: block;
+}
