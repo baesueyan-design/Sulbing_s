@@ -2,309 +2,334 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>설빙 공식 홈페이지</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설빙</title>
 
-    <!-- CSS -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- style -->
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" media="screen and (max-width:1024px)" href="./css/style(1024px).css">
-    <link rel="stylesheet" media="screen and (max-width:726px)" href="./css/style(726px).css">
 
-    <!-- 시각적으로 숨기기 (접근성용) -->
-    <style>
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-    </style>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
-
 <body>
+    <div class="wrap">
+        <!-- GNB -->
+        <div class="gnbWrap">
+            <div class="gnbArea">
 
-    <!-- 🟦 Skip Navigation -->
-    <a href="#main" class="sr-only">본문으로 바로가기</a>
+                <!-- 로고 -->
+                <h1><a href="#"><img src="./image/logo.png" alt="sulbing"></a></h1>
 
+                <!-- PC 메뉴 -->
+                <div class="gnbMenu pcOnly">
+                    <ul class="dep1">
+                        <li>
+                            <a href="https://sulbing.com/brand/story.php">BRAND</a>
+                            <ul class="dep2">
+                                <li><a href="https://sulbing.com/brand/story.php">설빙 스토리</a></li>
+                                <li><a href="https://sulbing.com/brand/history.php">연혁</a></li>
+                                <li><a href="https://sulbing.com/brand/bi.php">BI</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://sulbing.com/menu/?type=%EC%84%A4%EB%B9%99">MENU</a>
+                            <ul class="dep2">
+                                <li><a href="https://sulbing.com/menu/?type=%EC%84%A4%EB%B9%99">설빙</a></li>
+                                <li><a href="https://sulbing.com/menu/?type=%EC%82%AC%EC%9D%B4%EB%93%9C">사이드</a></li>
+                                <li><a href="https://sulbing.com/menu/?type=%EC%9D%8C%EB%A3%8C">음료</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://sulbing.com/news/">NEWS</a></li>
+                        <li><a href="https://sulbing.com/store/">STORE</a></li>
+                        <li><a href="https://sulbing.com/startup/global/">Global Sulbing</a></li>
+                    </ul>
+                </div>
 
+                <!-- 버튼 영역 -->
+                <div class="btnArea pcOnly">
+                    <a href="https://brand.naver.com/sulbing" class="gnbMall">
+                        <img src="./image/btn_sulbingmall(tab).png" alt="설빙몰">
+                    </a>
+                    <a href="https://sulbing.com/startup/index.php" class="gnbStore">
+                        <img src="./image/btn_open_info(tab).png" alt="창업안내">
+                    </a>
+                </div>
+                <div class="btnArea mobileOnly">
+                    <a href="https://brand.naver.com/sulbing">
+                        <img src="./image/btn_sulbingmall(tab).png" alt="설빙몰">
+                    </a>
+                    <a href="https://sulbing.com/startup/index.php">
+                        <img src="./image/btn_open_info(tab).png" alt="창업안내">
+                    </a>
+                </div>
 
-    <!-- ===========================================================
-   🟫 HEADER
-=========================================================== -->
-    <header class="top-header">
-        <div class="header-inner">
-
-            <!-- 로고 -->
-            <h1 class="logo">
-                <a href="index.html">
-                    <img src="./image/logo.png" alt="설빙 홈">
+                <!-- 모바일 햄버거 버튼 -->
+                <a href="#" class="btnGnb mobileOnly"
+                    onclick="document.querySelector('.gnbMenuMobile').classList.toggle('active'); return false;">
+                    <img src="./image/btn_gnb_ham_menu.png" alt="메뉴">
                 </a>
-            </h1>
 
-            <!-- 데스크탑 GNB -->
-            <nav class="gnb" id="gnb" aria-label="주 메뉴">
-                <ul>
-                    <li><a href="https://sulbing.com/brand/story.php">BRAND</a></li>
-                    <li><a href="https://sulbing.com/menu/">MENU</a></li>
-                    <li><a href="https://sulbing.com/news/">NEWS</a></li>
-                    <li><a href="https://sulbing.com/store/">STORE</a></li>
-                    <li><a href="https://sulbing.com/startup/global/">Global Sulbing</a></li>
-                </ul>
-            </nav>
-
-            <!-- 헤더 버튼 -->
-            <div class="header-actions">
-                <a href="https://brand.naver.com/sulbing" aria-label="설빙몰 바로가기">
-                    <img src="./image/btn_sulbingmall(tab).png" alt="">
-                </a>
-                <a href="https://sulbing.com/startup/index.php" aria-label="창업 안내 바로가기">
-                    <img src="./image/btn_open_info(tab).png" alt="">
-                </a>
             </div>
 
-            <!-- 모바일 햄버거 -->
-            <button class="hamburger-btn" type="button" aria-expanded="false" aria-controls="mobile-menu"
-                aria-label="모바일 메뉴 열기">
-                <img src="./image/btn_gnb_ham_menu.png" alt="">
-            </button>
+            <!-- 모바일 메뉴 -->
+            <div class="gnbMenu gnbMenuMobile mobileOnly">
+                <ul class="dep1">
+                    <li>
+                        <a href="https://sulbing.com/brand/story.php">BRAND</a>
+                        <ul class="dep2">
+                            <li><a href="#">설빙 스토리</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">BI</a></li>
+                        </ul>
+                    </li>
 
+                    <li>
+                        <a href="https://sulbing.com/menu/?type=%EC%84%A4%EB%B9%99">MENU</a>
+                        <ul class="dep2">
+                            <li><a href="#">설빙</a></li>
+                            <li><a href="#">사이드</a></li>
+                            <li><a href="#">음료</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">STORE</a></li>
+                    <li><a href="#">Global Sulbing</a></li>
+                </ul>
+            </div>
         </div>
 
-        <!-- 모바일 메뉴 -->
-        <nav class="mobile-menu" id="mobile-menu" aria-label="모바일 주 메뉴">
-            <ul>
-                <li><a href="https://sulbing.com/brand/story.php">BRAND</a></li>
-                <li><a href="https://sulbing.com/menu/">MENU</a></li>
-                <li><a href="https://sulbing.com/news/">NEWS</a></li>
-                <li><a href="https://sulbing.com/store/">STORE</a></li>
-                <li><a href="https://sulbing.com/startup/global/">Global Sulbing</a></li>
-            </ul>
-        </nav>
-    </header>
-
-
-
-
-
-    <!-- ===========================================================
-   🟣 HERO (메인 배너)
-=========================================================== -->
-    <main id="main">
-        <section class="hero" aria-label="메인 프로모션 배너">
-            <div class="hero-slider">
-
-                <!-- 1 -->
-                <article aria-label="흑절미 설빙 프로모션">
-                    <figure>
-                        <img src="./image/main_banner_흑절미.jpg" class="pcOnly" aria-hidden="true" alt="">
-                        <img src="./image/main_banner_흑절미(tab).png" class="mobileOnly" alt="흑절미 설빙 프로모션 이미지">
-                    </figure>
-                </article>
-
-                <!-- 2 -->
-                <article aria-label="돼지바 설빙 프로모션">
-                    <figure>
-                        <img src="./image/main_banner_돼지바.jpg" class="pcOnly" aria-hidden="true" alt="">
-                        <img src="./image/main_banner_돼지바(tab).png" class="mobileOnly" alt="돼지바 설빙 프로모션 이미지">
-                    </figure>
-                </article>
-
-                <!-- 3 -->
-                <article aria-label="구슬 설빙 프로모션">
-                    <figure>
-                        <img src="./image/main_banner_구슬.jpg" class="pcOnly" aria-hidden="true" alt="">
-                        <img src="./image/main_banner_구슬(tab).png" class="mobileOnly" alt="구슬 설빙 프로모션 이미지">
-                    </figure>
-                </article>
-
-            </div>
-
-            <!-- 슬라이드 버튼 및 점 -->
-            <div class="hero-controls">
-                <button class="prev" aria-label="이전 슬라이드">
-                    <img src="./image/back.png" alt="">
-                </button>
-                <button class="next" aria-label="다음 슬라이드">
-                    <img src="./image/next.png" alt="">
-                </button>
-
-                <div class="pager" role="tablist">
-                    <span role="tab" aria-label="1번 슬라이드"></span>
-                    <span role="tab" aria-label="2번 슬라이드"></span>
-                    <span role="tab" aria-label="3번 슬라이드"></span>
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <!-- ===========================================================
-   🟡 MENU LIST
-=========================================================== -->
-        <section class="sulbing-menu" aria-labelledby="menu-title">
-            <div class="menuList">
-                <div class="inner">
-
-                    <!-- 이미지 대체 제목 -->
-                    <h2 id="menu-title" class="sr-only">설빙 메뉴</h2>
-
-                    <div class="titleArea">
-                        <div class="title">
-                            <img src="./image/main_title_01.png" alt="설빙 메뉴">
-                        </div>
-
-                        <div class="btnArea">
-                            <a href="https://sulbing.com/menu/?type=%EC%82%AC%EC%9D%B4%EB%93%9C" aria-label="사이드 메뉴 보기">
-                                <img src="./image/btn_side(tab).png" alt="">
-                            </a>
-                            <a href="https://sulbing.com/menu/?type=%EC%9D%8C%EB%A3%8C" aria-label="음료 메뉴 보기">
-                                <img src="./image/btn_drink(tab).png" alt="">
+        <!-- Main Container -->
+        <div class="container main">
+            <!-- Main Slide -->
+            <div class="swiper bigSlide">
+                <div class="swiper-wrapper">
+                    <!-- 슬라이드 1 -->
+                    <div class="swiper-slide">
+                        <div class="inner">
+                            <a href="https://sulbing.com/menu/menu_view.php?menu=125">
+                                <img src="./image/main_banner_딸기1.jpg" alt="" class="pcOnly">
+                                <img src="./image/main_banner_딸기(tab).png" alt="" class="mobileOnly">
                             </a>
                         </div>
                     </div>
 
-                    <div class="menuListSlideWrapper">
-                        <div class="swiper menuListSlide">
-                            <div class="swiper-wrapper">
+                    <!-- 슬라이드 2 -->
+                    <div class="swiper-slide">
+                        <div class="inner">
+                            <a href="https://sulbing.com/menu/menu_view.php?menu=126">
+                                <img src="./image/main_banner_4종.jpg" alt="" class="pcOnly">
+                                <img src="./image/main_banner_4종(tab).png" alt="" class="mobileOnly">
+                            </a>
+                        </div>
+                    </div>
 
-                                <div class="swiper-slide">
-                                    <a href="https://sulbing.com/menu/menu_view.php?menu=123" aria-label="스윗캔디구슬설빙 상세보기">
-                                        <div class="img"><img src="./image/1.png" alt="스윗캔디구슬설빙"></div>
-                                        <div class="txt">스윗캔디구슬설빙</div>
-                                    </a>
+                    <!-- 슬라이드 3 -->
+                    <div class="swiper-slide">
+                        <div class="inner">
+                            <a href="https://sulbing.com/menu/menu_view.php?menu=120">
+                                <img src="./image/main_banner_흑절미.jpg" alt="" class="pcOnly">
+                                <img src="./image/main_banner_흑절미(tab).png" alt="" class="mobileOnly">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 슬라이드 4 -->
+                    <div class="swiper-slide">
+                        <div class="inner">
+                            <a href="https://sulbing.com/menu/menu_view.php?menu=118">
+                                <img src="./image/main_banner_돼지바.jpg" alt="" class="pcOnly">
+                                <img src="./image/main_banner_돼지바(tab).png" alt="" class="mobileOnly">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 슬라이드 5 -->
+                    <div class="swiper-slide">
+                        <div class="inner">
+                            <a href="https://sulbing.com/menu/menu_view.php?menu=123">
+                                <img src="./image/main_banner_구슬.jpg" alt="" class="pcOnly">
+                                <img src="./image/main_banner_구슬(tab).png" alt="" class="mobileOnly">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev">
+                    <img src="./image/back.png" alt="back">
+                </div>
+                <div class="swiper-button-next">
+                    <img src="./image/next.png" alt="next">
+                </div>
+            </div>
+
+            <!-- Sections -->
+            <div class="sectionArea">
+                <!-- Menu List Section -->
+                <div class="section menuList">
+                    <div class="inner">
+                        <div class="titleArea">
+                            <div class="title">
+                                <img src="./image/main_title_01.png" alt="설빙">
+                            </div>
+                            <div class="btnArea">
+                                <a href="https://sulbing.com/menu/?type=%EC%82%AC%EC%9D%B4%EB%93%9C"><img
+                                        src="./image/btn_side(tab).png" alt="사이드"></a>
+                                <a href="https://sulbing.com/menu/?type=%EC%9D%8C%EB%A3%8C"><img
+                                        src="./image/btn_drink(tab).png" alt="음료"></a>
+                            </div>
+                        </div>
+
+                        <div class="menuListSlideArea">
+                            <div class="swiper menuListSlide">
+                                <div class="swiper-wrapper">
+                                    <!-- 메뉴 아이템들 -->
+                                    <div class="swiper-slide">
+                                        <a href="https://sulbing.com/menu/menu_view.php?menu=123">
+                                            <div class="img">
+                                                <img src="./image/1.png" alt="">
+                                            </div>
+                                            <div class="txt">스윗캔디구슬설빙</div>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="https://sulbing.com/menu/menu_view.php?menu=124">
+                                            <div class="img">
+                                                <img src="./image/2.png" alt="">
+                                            </div>
+                                            <div class="txt">초코바닐라구슬설빙</div>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="https://sulbing.com/menu/menu_view.php?menu=120">
+                                            <div class="img">
+                                                <img src="./image/3.png" alt="">
+                                            </div>
+                                            <div class="txt">흑절미설빙</div>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="https://sulbing.com/menu/menu_view.php?menu=121">
+                                            <div class="img">
+                                                <img src="./image/5.png" alt="">
+                                            </div>
+                                            <div class="txt">팥흑절미설빙</div>
+                                        </a>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <a href="https://sulbing.com/menu/menu_view.php?menu=118">
+                                            <div class="img">
+                                                <img src="./image/4.png" alt="">
+                                            </div>
+                                            <div class="txt">깨먹는THE돼지바설빙</div>
+                                        </a>
+                                    </div>
                                 </div>
-
-                                <div class="swiper-slide">
-                                    <a href="https://sulbing.com/menu/menu_view.php?menu=124" aria-label="초코바닐라구슬설빙 상세보기">
-                                        <div class="img"><img src="./image/2.png" alt="초코바닐라구슬설빙"></div>
-                                        <div class="txt">초코바닐라구슬설빙</div>
-                                    </a>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <a href="https://sulbing.com/menu/menu_view.php?menu=120" aria-label="흑절미설빙 상세보기">
-                                        <div class="img"><img src="./image/3.png" alt="흑절미설빙"></div>
-                                        <div class="txt">흑절미설빙</div>
-                                    </a>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <a href="https://sulbing.com/menu/menu_view.php?menu=121" aria-label="팥흑절미설빙 상세보기">
-                                        <div class="img"><img src="./image/5.png" alt="팥흑절미설빙"></div>
-                                        <div class="txt">팥흑절미설빙</div>
-                                    </a>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <a href="https://sulbing.com/menu/menu_view.php?menu=118" aria-label="더 돼지바 설빙 상세보기">
-                                        <div class="img"><img src="./image/4.png" alt="더 돼지바 설빙"></div>
-                                        <div class="txt">깨먹는THE돼지바설빙</div>
-                                    </a>
-                                </div>
-
                             </div>
                         </div>
                     </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
-
-        <!-- ===========================================================
-   🟢 SNS
-=========================================================== -->
-        <section class="sns" aria-labelledby="sns-title">
-            <h2 id="sns-title" class="sr-only">설빙 SNS 소식</h2>
-
-            <div class="sns_inner">
-
-                <div class="sns_header">
-                    <h3><img src="./image/main_title_02.png" alt="SNS 소식"></h3>
-
-                    <ul class="sns_list">
-                        <li>
-                            <a href="#" aria-label="설빙 페이스북">
-                                <img src="./image/btn_sns_01.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="설빙 인스타그램">
-                                <img src="./image/btn_sns_02.png" alt="">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" aria-label="설빙 유튜브">
-                                <img src="./image/btn_sns_03.png" alt="">
-                            </a>
-                        </li>
-                    </ul>
                 </div>
 
-                <div class="sns_pic">
-                    <ul>
-                        <li><img src="./image/sns_1.jpg" alt="SNS 게시물 1"></li>
-                        <li><img src="./image/sns_2.jpg" alt="SNS 게시물 2"></li>
-                        <li><img src="./image/sns_3.jpg" alt="SNS 게시물 3"></li>
-                        <li><img src="./image/sns_4.jpg" alt="SNS 게시물 4"></li>
-                    </ul>
+                <!-- SNS Section -->
+                <div class="section snsArea">
+                    <div class="inner">
+                        <div class="titleArea">
+                            <div class="title">
+                                <img src="./image/main_title_02.png" alt="sns">
+                            </div>
+                            <div class="btnArea sns">
+                                <a href="https://www.facebook.com/sulbing/"><img src="./image/btn_sns_01.png"
+                                        alt="페이스북"></a>
+                                <a href="https://www.instagram.com/sulbing.official/"><img src="./image/btn_sns_02.png"
+                                        alt="인스타"></a>
+                                <a href="https://www.youtube.com/@sulbing.official"><img src="./image/btn_sns_03.png"
+                                        alt="유튜브"></a>
+                            </div>
+                        </div>
+                        <div class="snsSlideArea">
+                            <ul>
+                                <li><img src="./image/sns_1.jpg" alt="SNS 게시물 1"></li>
+                                <li><img src="./image/sns_2.jpg" alt="SNS 게시물 2"></li>
+                                <li><img src="./image/sns_3.jpg" alt="SNS 게시물 3"></li>
+                                <li><img src="./image/sns_4.jpg" alt="SNS 게시물 4"></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Banner Section -->
+                <div class="section banner pcOnly">
+                    <a href="https://sulbing.com/store/" class="mainBanner store">
+                        <img src="./image/main_banner_store.png" alt="매장찾기">
+                    </a>
+                    <a href="https://sulbing.com/startup/" class="mainBanner openInfo">
+                        <img src="./image/main_banner_intro.png" alt="창업안내">
+                    </a>
+                </div>
+
+                <div class="section banner mobileOnly">
+                    <a href="https://sulbing.com/store/" class="mainBanner">
+                        <img src="./image/main_banner_store(tab).png" alt="매장찾기">
+                    </a>
+                    <a href="https://sulbing.com/startup/" class="mainBanner">
+                        <img src="./image/main_banner_intro(tab).png" alt="창업안내">
+                    </a>
+                </div>
             </div>
-        </section>
+        </div>
 
-
-
-
-        <!-- ===========================================================
-   🟤 STORE & 창업 안내
-=========================================================== -->
-        <section class="store-franchise" aria-label="매장검색 및 창업 안내">
-            <div class="store-search">
-                <img src="./image/main_banner_store.png" class="pcOnly" aria-hidden="true" alt="">
-                <img src="./image/main_banner_store(tab).png" class="mobileOnly" alt="가까운 설빙 매장 찾기">
-            </div>
-
-            <div class="franchise-info">
-                <img src="./image/main_banner_intro.png" class="pcOnly" aria-hidden="true" alt="">
-                <img src="./image/main_banner_intro(tab).png" class="mobileOnly" alt="설빙 창업 안내">
-            </div>
-        </section>
-
-
-
-        <!-- ===========================================================
-   ⚫ FOOTER
-=========================================================== -->
-        <footer aria-label="사이트 정보">
-            <img src="./image/footer_250416_(1).png" class="pcOnly" aria-hidden="true" alt="">
-            <img src="./image/footer_tab.png" class="mobileOnly" alt="설빙 푸터 정보">
+        <!-- Footer -->
+        <footer>
+            <img src="./image/footer_250416 _(1).png" class="pcOnly" alt="">
+            <img src="./image/footer_tab.png" class="mobileOnly" alt="">
+            <a href="https://sulbing.com/news/onlinecenter.php" class="btnBlank bottomMenu bottomMenu1">고객센터</a>
+            <a href="https://sulbing.com/rule/privacy.php" class="btnBlank bottomMenu bottomMenu3">개인정보처리방침</a>
+            <a href="https://sulbing.com/rule/email_legal.php" class="btnBlank bottomMenu bottomMenu4">이메일무단수집거부</a>
+            <a href="https://sulbing.com/rule/legal_notice.php" class="btnBlank bottomMenu bottomMenu5">법적고지</a>
+            <a href="https://sulbing.com/bbs/login.php?type=fran" class="btnBlank bottomMenu bottomMenu6">경영주 전용</a>
+            <a href="mailto:marketing@sulbing.com" class="btnBlank bottomMenu email">marketing@sulbing.com</a>
         </footer>
+    </div>
 
-
-
-
-        <!-- ===========================================================
-   JS
-=========================================================== -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script src="./js/slider.js"></script>
-        <script src="./js/swiper_menu.js"></script>
-        <script src="./js/hamburger.js"></script>
-
-    </main>
+    <script>
+        // Main Slide
+        const mainSlide = new Swiper(".bigSlide", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+            }
+        });
+    
+        // Menu List Slide
+        const menuListSlide = new Swiper(".menuListSlide", {
+            slidesPerView: "auto",
+            spaceBetween: 14,
+        });
+    </script>
+    
 </body>
 
 </html>

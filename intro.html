@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>설빙 Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- RESET -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    </style>
+
+    <!-- INTRO STYLE -->
+    <style>
+        /*******************************************
+            PC INTRO (1024px 이상)
+        *******************************************/
+        .pcOnly {
+            display: block;
+        }
+
+        .mobileOnly {
+            display: none;
+        }
+
+        .intro.pcOnly {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            min-height: 900px;
+        }
+
+        .intro.pcOnly .item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 60px 20px;
+            cursor: pointer;
+        }
+
+        /* 왼쪽 */
+        .intro.pcOnly .item1 {
+            background: #f8e8ce;
+            color: #631f18;
+        }
+
+        /* 오른쪽 */
+        .intro.pcOnly .item2 {
+            background: #8e3e35;
+            color: #ffffff;
+        }
+
+        .intro.pcOnly .simg {
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .intro.pcOnly .simg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro.pcOnly .tit {
+            font-size: 46px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .intro.pcOnly .desc {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .intro.pcOnly .logo {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .intro.pcOnly .logo img {
+            height: 34px;
+        }
+
+
+
+        /*******************************************
+            MOBILE INTRO (1023px 이하)
+        *******************************************/
+        @media screen and (max-width: 1023px) {
+
+            .pcOnly {
+                display: none !important;
+            }
+
+            .mobileOnly {
+                display: block !important;
+            }
+
+            .intro.mobileOnly {
+                width: 100%;
+            }
+
+            .intro.mobileOnly img {
+                width: 100%;
+                display: block;
+            }
+
+            .intro.mobileOnly .item {
+                display: block;
+                width: 100%;
+                padding: 18px 20px;
+                font-size: 16px;
+                background: #f6e6c9;
+                border-bottom: 1px solid #e5d3b7;
+                color: #42120e;
+                line-height: 1.4;
+                text-align: left;
+            }
+
+            .intro.mobileOnly .item2 {
+                background: #8e3e35;
+                color: #ffffff;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ************ PC INTRO ************ -->
+    <div class="intro pcOnly">
+
+        <!-- 브랜드 -->
+        <a href="index.html" class="item item1">
+            <div class="img">
+                <div class="simg">
+                    <img src="./image/intro_img_01.png" alt="브랜드 이미지">
+                </div>
+                <div class="tit">브랜드</div>
+                <div class="desc">
+                    달콤한 신메뉴부터 풍성한 이벤트까지<br>
+                    설빙의 최신 소식을 살펴보세요
+                </div>
+            </div>
+            <div class="logo">
+                <img src="./image/logo1.png" alt="sulbing">
+            </div>
+        </a>
+
+        <!-- 창업 안내 -->
+        <a href="https://sulbing.com/startup/" class="item item2">
+            <div class="img">
+                <div class="simg">
+                    <img src="./image/intro_img_02.png" alt="창업 이미지">
+                </div>
+                <div class="tit">창업안내</div>
+                <div class="desc">
+                    가맹점주와 본사가 함께하는 브랜드<br>
+                    설빙이 여러분의 든든한 파트너가 되겠습니다
+                </div>
+            </div>
+            <div class="logo">
+                <img src="./image/logo.png" alt="sulbing">
+            </div>
+        </a>
+
+    </div>
+
+
+
+    <!-- ************ MOBILE INTRO ************ -->
+    <div class="intro mobileOnly">
+
+        <img src="./image/intro_mo.jpg" alt="모바일 배경">
+
+        <a href="index.html" class="item item1">
+            브랜드<br>
+            달콤한 신메뉴부터 풍성한 이벤트까지 설빙의 최신 소식을 살펴보세요
+        </a>
+
+        <a href="https://sulbing.com/startup/" class="item item2">
+            창업안내<br>
+            가맹점주와 본사가 함께하는 브랜드 설빙이 여러분의 든든한 파트너가 되겠습니다
+        </a>
+    </div>
+
+</body>
+
+</html>
